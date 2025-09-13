@@ -1,8 +1,9 @@
 # TalkZone 🧠💬
 ---
 
-TalkZone is a simple educational website designed to help users explore the world of counseling and mental wellness.
+ TalkZone is a simple educational website designed to help users explore the world of counseling and mental wellness.
 This platform guides users through emotional communication, self-reflection, and counseling approaches across three learning levels (Easy, Medium, Hard), and introduces digital counseling concepts using Python.
+
 ---
 
 ## 📦 Installation
@@ -58,15 +59,15 @@ Technologies used:
 We welcome contributions from anyone who wants to help improve TalkZone!
 Whether you're fixing bugs, adding new features, improving documentation, or sharing new learning materials, your effort is highly appreciated.
 ### How to Contribute
-1. 	*Fork* this repository
-2. 	Create a new *branch* for your feature or bugfix
-3. 	*Commit* your changes with clear messages
-4. 	*Push* to your branch and open a *Pull Request*
-5. 	Wait for review and feedback before merging
+ 1. 	*Fork* this repository
+ 2. 	Create a new *branch* for your feature or bugfix
+ 3. 	*Commit* your changes with clear messages
+ 4. 	*Push* to your branch and open a *Pull Request*
+ 5. 	Wait for review and feedback before merging
 ### Contribution Guidelines
-• 	Keep your code clean and well-documented
-• 	Ensure new features or fixes are properly tested
-• 	Be respectful and collaborative in discussions
+ • 	Keep your code clean and well-documented
+ • 	Ensure new features or fixes are properly tested
+ • 	Be respectful and collaborative in discussions
 Together, we can make TalkZone a safe and empowering space for learning and growth! 
 
 ---
