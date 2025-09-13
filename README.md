@@ -1,4 +1,5 @@
 # TalkZone 🧠💬
+---
 
 TalkZone is a simple educational website designed to help users explore the world of counseling and mental wellness.
 This platform guides users through emotional communication, self-reflection, and counseling approaches across three learning levels (Easy, Medium, Hard), and introduces digital counseling concepts using Python.
