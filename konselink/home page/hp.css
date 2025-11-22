@@ -1,0 +1,225 @@
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: #fff;
+  color: #333;
+}
+
+h1, h2 {
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+}
+
+#toTop {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #a8d9ff;
+  color: white;
+  padding: 12px 16px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: bold;
+  display: none;
+  border: none;
+  font-size: 20px;
+}
+
+.card {
+  background: #a8d9ff;
+  padding: 15px;
+  border-radius: 10px;
+  color: white;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b8e9a5;
+  padding: 15px 80px;
+  border-bottom: 8px solid white;
+}
+
+.navbar-space {
+  height: 40px;
+  background: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+header nav a {
+  margin: 0 35px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+header .btn-login {
+  background: white;
+  padding: 12px 17px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #A8D9FF;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b8e9a5;
+  padding: 30px 80px 0 90px;
+  overflow: visible;
+  position: relative;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 3rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  margin-top: -100px;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 60px;
+  color: #ffffff;
+  font-weight: 700;
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.hero-buttons .btn-primary {
+  background: white;
+  color: #b8e9a5;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  top: 40px;
+}
+
+.hero-buttons .btn-secondary {
+  background: white;
+  color: #A8D9FF;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 10px;
+  margin-left: 40px;
+  font-weight: bold;
+  font-size: 18px;
+  position: relative;
+  top: 40px;
+}
+
+.hero-image img {
+  max-width: 500px;
+  position: relative;
+  top: 20px;
+  margin-bottom: -50px;
+  margin-right: -20px;
+}
+
+.tentang {
+  background: #a8d9ff;
+  padding: 50px 80px;
+  color: white;
+}
+
+.tentang h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.tentang p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.misi {
+  background: #b8e9a5;
+  padding: 50px 80px;
+}
+
+.misi h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.misi ul {
+  margin: 0;
+  padding-left: 20px;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.misi ul li {
+  margin: 10px 0;
+  line-height: 1.5;
+}
+
+.misi .note {
+  font-style: italic;
+  color: #ffffff;
+}
+
+.testimoni {
+  background: #f4f9ff;
+  padding: 50px 80px;
+}
+
+.testimoni h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #A8D9FF;
+}
+
+.testimoni-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #a8d9ff;
+  padding: 20px;
+  border-radius: 10px;
+  color: white;
+}
+
+.username {
+  margin-top: 15px;
+  font-weight: bold;
+  text-align: right;
+}
+
+footer {
+  background: #b8e9a5;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}

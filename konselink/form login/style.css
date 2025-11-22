@@ -1,0 +1,184 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+
+.login-container {
+  width: 100%;
+  max-width: 700px;
+  background-color: #b6e8b2;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Geser ke kiri */
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+
+
+.logo-img {
+  width: 40px;
+  height: auto;
+  
+}
+
+.logo-text {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+h2 {
+  text-align: center;
+  font-size: 35px;
+  margin-bottom: 8px;
+  color: #ffffff;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 20px;
+}
+
+/* Formulir */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #ffffff;
+}
+
+input[type="email"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  
+}
+
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 15px;
+}
+
+.options a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.options a:hover {
+  text-decoration: underline;
+}
+
+
+.btn {
+  background-color: #83dcf2;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #218838;
+}
+
+/* Tombol Google */
+.btn-google {
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 15px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-google:hover {
+  background-color: #f1f1f1;
+}
+
+.btn-google img {
+  width: 18px;
+  height: 18px;
+}
+
+/* Teks signup */
+.signup-text {
+  text-align: center;
+  font-size: 14px;
+  margin-top: 15px;
+  color: #555;
+}
+
+.signup-text a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.signup-text a:hover {
+  text-decoration: underline;
+}
+
+/* Responsif untuk mobile */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    max-width: 90%;
+  }
+
+  .logo-text {
+    font-size: 20px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+}

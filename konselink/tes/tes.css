@@ -1,0 +1,195 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b8e9a5;
+  padding: 15px 80px;
+  border-bottom: 8px solid white;
+}
+
+.navbar-space {
+  height: 40px;
+  background: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+header nav a {
+  margin: 0 35px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+header .btn-login {
+  background: white;
+  padding: 12px 17px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #A8D9FF;
+}
+
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    padding: 30px 30px 60px;
+}
+
+
+.header-test {
+    background: #c7e8f9;
+    border-radius: 26px;
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 18px;
+}
+
+.header-left img {
+    max-width: 140px;
+    height: auto;
+}
+
+.title-big {
+    font-size: 52px;
+    color: #ffffff;
+    font-weight: 800;
+    line-height: 1.05;
+}
+
+
+.subtitle {
+    font-size: 12px;
+    color: #9aaf8b;
+    line-height: 1.5;
+    margin-bottom: 40px;
+}
+
+
+.test-form {
+    margin-bottom: 40px;
+}
+
+
+.question {
+    margin-bottom: 40px;
+}
+
+.question-text {
+    background: #c7ecff;
+    border-radius: 28px;
+    padding: 14px 40px;
+    text-align: center;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+
+.scale {
+    display: flex;
+    justify-content: space-between;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+
+.scale-dot {
+    position: relative;
+}
+
+.scale-dot input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+}
+
+
+.scale-dot span {
+    display: block;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: #c7e8b3;
+}
+
+
+.scale-dot:nth-child(3) span {
+    width: 26px;
+    height: 26px;
+    margin-top: 11px;
+}
+
+
+.scale-dot input[type="radio"]:checked + span {
+    box-shadow: 0 0 0 6px #ffffff inset;
+}
+
+
+.submit-area {
+    background: #c7e8b3;
+    padding: 30px 0 50px;
+    margin: 0 -30px; 
+    display: flex;
+    justify-content: center;
+}
+
+.btn-submit {
+    background: #ffffff;
+    border-radius: 28px;
+    border: none;
+    padding: 12px 80px;
+    font-size: 20px;
+    text-transform: lowercase;
+    font-weight: 700;
+    color: #c4e29c;
+    cursor: pointer;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-inner {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .page {
+        padding: 20px 16px 40px;
+    }
+
+    .header-test {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .scale {
+        max-width: 100%;
+        padding: 0 20px;
+    }
+
+    .submit-area {
+        margin: 0 -16px;
+    }
+}

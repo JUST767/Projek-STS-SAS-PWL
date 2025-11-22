@@ -1,0 +1,188 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+    background: #ffffff;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b8e9a5;
+  padding: 15px 80px;
+  border-bottom: 8px solid white;
+}
+
+.navbar-space {
+  height: 40px;
+  background: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 20px;
+}
+
+header nav a {
+  margin: 0 35px;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+header .btn-login {
+  background: white;
+  padding: 12px 17px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #A8D9FF;
+}
+
+
+.page {
+    max-width: 1100px;
+    margin: 0 auto 60px;
+    padding: 30px 30px 60px;
+}
+
+
+.forum-header {
+    background: #c7e8b3;
+    border-radius: 24px;
+    text-align: center;
+    padding: 30px 10px;
+    margin-bottom: 30px;
+}
+
+.forum-header h1 {
+    font-size: 52px;
+    line-height: 1;
+    color: #ffffff;
+    font-weight: 800;
+}
+
+
+.kategori-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.kategori-label {
+    font-size: 18px;
+    font-weight: 700;
+    color: #c7e8b3;
+    text-transform: lowercase;
+}
+
+.kategori-buttons {
+    display: flex;
+    gap: 16px;
+}
+
+.pill {
+    border-radius: 18px;
+    border: none;
+    padding: 4px 30px;
+    background: #c7e8b3;
+    color: #ffffff;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.pill.active {
+    background: #b3db9c;
+}
+
+
+.input-section {
+    margin: 16px 0 26px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #dedede;
+    border-radius: 18px;
+    padding: 8px 12px;
+}
+
+.input-wrapper textarea {
+    flex: 1;
+    border: none;
+    background: transparent;
+    resize: none;
+    font-size: 13px;
+    min-height: 34px;
+    outline: none;
+}
+
+.btn-send {
+    border: none;
+    background: transparent;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+.pesan-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.pesan-card {
+    background: #c7e8b3;
+    border-radius: 10px;
+    padding: 14px 22px;
+    color: #ffffff;
+}
+
+.pesan-username {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 6px;
+}
+
+.pesan-body {
+    font-size: 13px;
+}
+
+
+@media (max-width: 768px) {
+    .navbar-inner {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .page {
+        padding: 20px 16px 40px;
+    }
+
+    .forum-header h1 {
+        font-size: 40px;
+    }
+
+    .kategori-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .kategori-buttons {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}

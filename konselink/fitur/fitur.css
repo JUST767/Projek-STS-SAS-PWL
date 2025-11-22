@@ -1,0 +1,164 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #333;
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #b8e9a5;
+  padding: 15px 80px;
+
+    border-bottom: 8px solid white; /* garis putih */
+}
+
+.navbar-space {
+  height: 40px; /* atur tinggi space putih setelah navbar */
+  background: white;
+}
+
+header .logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+  font-size: 20px; /* atau coba 26px, 28px sesuai selera */
+}
+
+
+header nav a {
+  margin: 0 35px;
+  font-weight: 600;
+  color: #ffffff;
+}
+header .btn-login {
+  background: white;
+  padding: 12px 17px;
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-weight: bold;
+  color: #A8D9FF;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+}
+
+.navbar nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.navbar nav a.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.btn-login {
+  background: #e8f5e1;
+  border: 1px solid #a2c79e;
+  padding: 6px 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+
+.fitur-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 40px;
+  justify-items: center;
+}
+
+.fitur-card {
+  background: #fff;
+  border: 2px solid #d6e6c8;
+  border-radius: 10px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  width: 220px;
+}
+
+.fitur-card:hover {
+  transform: translateY(-5px);
+}
+
+.fitur-card img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.fitur-card h3 {
+  margin-top: 10px;
+  color: #4b684b;
+  font-size: 15px;
+}
+
+
+.banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px 80px;
+  color: white;
+  text-align: center;
+}
+
+.banner img {
+  width: 320px;
+}
+
+.banner.blue {
+  background: #a8ccf0;
+}
+
+.banner.green {
+  background: #c7e8b3;
+  flex-direction: row-reverse;
+}
+
+.banner h2 {
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+
+@media (max-width: 768px) {
+  .banner {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .banner img {
+    width: 180px;
+    margin-top: 20px;
+  }
+}
