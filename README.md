@@ -1,4 +1,196 @@
-# TalkZone - Sistem Manajemen Konseling  TalkZone adalah sebuah aplikasi yang dirancang untuk mempermudah pengelolaan pendaftaran dan manajemen sesi konseling. Proyek ini dibuat untuk mengatasi masalah-masalah yang sering terjadi pada sistem manual, seperti risiko kesalahan data, kurangnya transparansi, dan sulitnya pemantauan.  ---  ## 👥 Kontributor  - **Justin Geraldo** : UI/UX Designer - **Audrey Evelyn** : Front-End Developer - **Ericxander** : Back-End Developer  ---  ## 💡 Latar Belakang  Proyek ini dibangun untuk menyelesaikan beberapa masalah utama yang dihadapi dalam pengelolaan konseling secara konvensional:  - **Tingginya Risiko Kesalahan Data**: Pencatatan data pendaftar secara manual rentan terhadap human error. - **Keterbatasan Informasi & Transparansi**: Pengguna sering kesulitan mengakses informasi jadwal, topik, dan konselor. - **Kesulitan Rekapitulasi & Pemantauan**: Sulit merekap data pendaftar dan memantau kehadiran peserta secara real-time. - **Informasi Cepat Tertimbun**: Jadwal dan update penting sering tidak sampai ke semua peserta tepat waktu.  ---  ## ✅ Solusi yang Ditawarkan  - Pendaftaran konseling secara digital dan terstruktur. - Profil konselor lengkap dengan topik, durasi, dan deskripsi sesi. - Manajemen jadwal konseling yang mudah dilihat dan diakses. - Rekap otomatis data pendaftaran untuk memudahkan pemantauan oleh konselor.  ---  ## 👨‍👩‍👧‍👦 Target Pengguna  - **Siswa / Pengguna**: Mendaftar ke sesi konseling dan melihat jadwal. - **Konselor**: Memantau daftar pendaftar dan status kehadiran. - **Orang Tua**: Memantau aktivitas anak melalui jadwal yang tersedia.  ---  ## 🗂️ Fitur Utama Aplikasi  ### 1. Manajemen Pengguna (users) - Tambah Pengguna - Lihat daftar pengguna - Edit data pengguna - Hapus Pengguna  ### 2. Manajemen Sesi Konseling (konseling) - Tambah sesi konseling baru - Lihat daftar semua sesi konseling - Edit informasi sesi (topik, durasi, deskripsi) - Hapus sesi konseling  ### 3. Pendaftaran Sesi Konseling (konseling_registrasi) - Daftar ke sesi konseling tertentu - Lihat riwayat pendaftaran - Update status pendaftaran (misal: Terjadwal) - Batalkan pendaftaran  ---  ## 💻 Teknologi yang Digunakan  - **UI/UX Design**: Figma - **Frontend**: HTML, CSS, JavaScript - **Backend**: PHP - **Database**: MySQL - **Server Local**: Laragon  ---  ## 🔁 Alur Sistem (Flow)  Pengguna → Login → Lihat Jadwal Konseling → Pilih & Daftar → Status: Terjadwal → Hadiri Sesi  ---  ## 🧱 Struktur Database (`talkzone_db`)  Aplikasi ini menggunakan 3 tabel utama:  ### 1. users Menyimpan data pengguna yang terdaftar.  **Field:** - `id` (INT, Primary Key) - `email` (VARCHAR) — Email pengguna - `password` (TEXT) — Hash password pengguna  ### 2. konseling Menyimpan informasi tentang setiap sesi konseling yang tersedia.  **Field:** - `id` (INT, Primary Key) - `konselor` (VARCHAR) — Nama konselor - `topik_konseling` (VARCHAR) — Topik utama sesi - `durasi` (INT) — Durasi sesi dalam menit - `deskripsi` (TEXT) — Deskripsi singkat sesi - `created_at` (TIMESTAMP) — Waktu pembuatan sesi  ### 3. konseling_registrasi Menyimpan data pendaftaran pengguna ke sesi konseling.  **Field:** - `id` (INT, Primary Key) - `user_id` (INT, Foreign Key ke users.id) - `konseling_id` (INT, Foreign Key ke konseling.id) - `tanggal` (DATE) — Tanggal pelaksanaan - `waktu` (TIME) — Waktu pelaksanaan - `status` (VARCHAR) — Status pendaftaran (default: "Terjadwal") - `created_at` (TIMESTAMP) — Waktu pendaftaran dibuat  ---  ## ⚙️ Instalasi & Setup Database  ### 1. Clone Repository ```bash git clone <url-repository-anda> cd <nama-folder-repository>  2. Install & Jalankan Server Install Laragon Aktifkan Apache & MySQL 3. Buat Database Buka phpMyAdmin di http://localhost/phpmyadmin Buat database baru dengan nama: talkzone_db 4. Import atau Buat Tabel Manual Jika ada file SQL, import talkzone_db.sql. Jika tidak, jalankan skrip berikut di phpMyAdmin:  CREATE TABLE users (     id INT AUTO_INCREMENT PRIMARY KEY,     email VARCHAR(255) UNIQUE NOT NULL,     password TEXT NOT NULL );  CREATE TABLE konseling (     id INT AUTO_INCREMENT PRIMARY KEY,     konselor VARCHAR(255) NOT NULL,     topik_konseling VARCHAR(255) NOT NULL,     durasi INT NOT NULL,     deskripsi TEXT,     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );  CREATE TABLE konseling_registrasi (     id INT AUTO_INCREMENT PRIMARY KEY,     user_id INT NOT NULL,     konseling_id INT NOT NULL,     tanggal DATE NOT NULL,     waktu TIME NOT NULL,     status VARCHAR(50) DEFAULT 'Terjadwal',     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,     FOREIGN KEY (konseling_id) REFERENCES konseling(id) ON DELETE CASCADE );  5. Konfigurasi Koneksi Database Edit file konfigurasi  backend (biasanya config.php atau database.php) dengan detail berikut: CREATE TABLE users (     id INT AUTO_INCREMENT PRIMARY KEY,     email VARCHAR(255) UNIQUE NOT NULL,     password TEXT NOT NULL );  CREATE TABLE konseling (     id INT AUTO_INCREMENT PRIMARY KEY,     konselor VARCHAR(255) NOT NULL,     topik_konseling VARCHAR(255) NOT NULL,     durasi INT NOT NULL,     deskripsi TEXT,     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP );  CREATE TABLE konseling_registrasi (     id INT AUTO_INCREMENT PRIMARY KEY,     user_id INT NOT NULL,     konseling_id INT NOT NULL,     tanggal DATE NOT NULL,     waktu TIME NOT NULL,     status VARCHAR(50) DEFAULT 'Terjadwal',     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,     FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,     FOREIGN KEY (konseling_id) REFERENCES konseling(id) ON DELETE CASCADE );   5. Konfigurasi Koneksi Database Edit file konfigurasi backend (biasanya config.php atau database.php) dengan detail berikut:
+# TalkZone - Sistem Manajemen Konseling
+
+TalkZone adalah sebuah aplikasi yang dirancang untuk mempermudah pengelolaan pendaftaran dan manajemen sesi konseling. Proyek ini dibuat untuk mengatasi masalah-masalah yang sering terjadi pada sistem manual, seperti risiko kesalahan data, kurangnya transparansi, dan sulitnya pemantauan.
+
+---
+
+## 👥 Kontributor
+
+- **Justin Geraldo** : UI/UX Designer
+- **Audrey Evelyn** : Front-End Developer
+- **Ericxander** : Back-End Developer
+
+---
+
+## 💡 Latar Belakang
+
+Proyek ini dibangun untuk menyelesaikan beberapa masalah utama yang dihadapi dalam pengelolaan konseling secara konvensional:
+
+- **Tingginya Risiko Kesalahan Data**: Pencatatan data pendaftar secara manual rentan terhadap human error.
+- **Keterbatasan Informasi & Transparansi**: Pengguna sering kesulitan mengakses informasi jadwal, topik, dan konselor.
+- **Kesulitan Rekapitulasi & Pemantauan**: Sulit merekap data pendaftar dan memantau kehadiran peserta secara real-time.
+- **Informasi Cepat Tertimbun**: Jadwal dan update penting sering tidak sampai ke semua peserta tepat waktu.
+
+---
+
+## ✅ Solusi yang Ditawarkan
+
+- Pendaftaran konseling secara digital dan terstruktur.
+- Profil konselor lengkap dengan topik, durasi, dan deskripsi sesi.
+- Manajemen jadwal konseling yang mudah dilihat dan diakses.
+- Rekap otomatis data pendaftaran untuk memudahkan pemantauan oleh konselor.
+
+---
+
+## 👨‍👩‍👧‍👦 Target Pengguna
+
+- **Siswa / Pengguna**: Mendaftar ke sesi konseling dan melihat jadwal.
+- **Konselor**: Memantau daftar pendaftar dan status kehadiran.
+- **Orang Tua**: Memantau aktivitas anak melalui jadwal yang tersedia.
+
+---
+
+## 🗂️ Fitur Utama Aplikasi
+
+### 1. Manajemen Pengguna (users)
+- Tambah Pengguna
+- Lihat daftar pengguna
+- Edit data pengguna
+- Hapus Pengguna
+
+### 2. Manajemen Sesi Konseling (konseling)
+- Tambah sesi konseling baru
+- Lihat daftar semua sesi konseling
+- Edit informasi sesi (topik, durasi, deskripsi)
+- Hapus sesi konseling
+
+### 3. Pendaftaran Sesi Konseling (konseling_registrasi)
+- Daftar ke sesi konseling tertentu
+- Lihat riwayat pendaftaran
+- Update status pendaftaran (misal: Terjadwal)
+- Batalkan pendaftaran
+
+---
+
+## 💻 Teknologi yang Digunakan
+
+- **UI/UX Design**: Figma
+- **Frontend**: HTML, CSS, JavaScript
+- **Backend**: PHP
+- **Database**: MySQL
+- **Server Local**: Laragon
+
+---
+
+## 🔁 Alur Sistem (Flow)
+
+Pengguna → Login → Lihat Jadwal Konseling → Pilih & Daftar → Status: Terjadwal → Hadiri Sesi
+
+---
+
+## 🧱 Struktur Database (`talkzone_db`)
+
+Aplikasi ini menggunakan 3 tabel utama:
+
+### 1. users
+Menyimpan data pengguna yang terdaftar.
+
+**Field:**
+- `id` (INT, Primary Key)
+- `email` (VARCHAR) — Email pengguna
+- `password` (TEXT) — Hash password pengguna
+
+### 2. konseling
+Menyimpan informasi tentang setiap sesi konseling yang tersedia.
+
+**Field:**
+- `id` (INT, Primary Key)
+- `konselor` (VARCHAR) — Nama konselor
+- `topik_konseling` (VARCHAR) — Topik utama sesi
+- `durasi` (INT) — Durasi sesi dalam menit
+- `deskripsi` (TEXT) — Deskripsi singkat sesi
+- `created_at` (TIMESTAMP) — Waktu pembuatan sesi
+
+### 3. konseling_registrasi
+Menyimpan data pendaftaran pengguna ke sesi konseling.
+
+**Field:**
+- `id` (INT, Primary Key)
+- `user_id` (INT, Foreign Key ke users.id)
+- `konseling_id` (INT, Foreign Key ke konseling.id)
+- `tanggal` (DATE) — Tanggal pelaksanaan
+- `waktu` (TIME) — Waktu pelaksanaan
+- `status` (VARCHAR) — Status pendaftaran (default: "Terjadwal")
+- `created_at` (TIMESTAMP) — Waktu pendaftaran dibuat
+
+---
+
+## ⚙️ Instalasi & Setup Database
+
+### 1. Clone Repository
+```bash
+git clone <url-repository-anda>
+cd <nama-folder-repository>
+
+2. Install & Jalankan Server
+Install Laragon
+Aktifkan Apache & MySQL
+3. Buat Database
+Buka phpMyAdmin di http://localhost/phpmyadmin
+Buat database baru dengan nama: talkzone_db
+4. Import atau Buat Tabel Manual
+Jika ada file SQL, import talkzone_db.sql. Jika tidak, jalankan skrip berikut di phpMyAdmin:
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE konseling (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    konselor VARCHAR(255) NOT NULL,
+    topik_konseling VARCHAR(255) NOT NULL,
+    durasi INT NOT NULL,
+    deskripsi TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE konseling_registrasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    konseling_id INT NOT NULL,
+    tanggal DATE NOT NULL,
+    waktu TIME NOT NULL,
+    status VARCHAR(50) DEFAULT 'Terjadwal',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (konseling_id) REFERENCES konseling(id) ON DELETE CASCADE
+);
+
+5. Konfigurasi Koneksi Database
+Edit file konfigurasi 
+backend (biasanya config.php atau database.php) dengan detail berikut:
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    password TEXT NOT NULL
+);
+
+CREATE TABLE konseling (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    konselor VARCHAR(255) NOT NULL,
+    topik_konseling VARCHAR(255) NOT NULL,
+    durasi INT NOT NULL,
+    deskripsi TEXT,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE konseling_registrasi (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT NOT NULL,
+    konseling_id INT NOT NULL,
+    tanggal DATE NOT NULL,
+    waktu TIME NOT NULL,
+    status VARCHAR(50) DEFAULT 'Terjadwal',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (konseling_id) REFERENCES konseling(id) ON DELETE CASCADE
+);
+
+
+5. Konfigurasi Koneksi Database
+Edit file konfigurasi backend (biasanya config.php atau database.php) dengan detail berikut:
 $host = "localhost";
 $user = "root";
 $pass = "";
